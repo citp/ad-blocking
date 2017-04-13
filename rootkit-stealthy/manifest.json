@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+
+  "name": "Stealthy Whitespace Adblocker",
+  "description": "Covers ads with white containers in a stealthy manner.",
+  "version": "0.1.0",
+  "browser_action": {
+    "default_icon": "icon24.png",
+    "default_popup": "popup.html",
+    "default_title": "Stealthy Adblocker"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["externalCode/jquery/jquery-1.12.4.min.js", "eraseFootprint.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["externalCode/jquery/jquery-1.12.4.min.js", "ad_coverer.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "*://*/"
+  ]
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<vbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<setting type="bool" pref="extensions.activeadblock.enabled" title="Enable" />
+	<setting type="file" pref="extensions.activeadblock.filterList" title="Filter List"/>
+	<!-- setting type="string" pref="extensions.activeadblock.custom" title="Custum Var">
+	$MHR$ in replace
+	</setting -->
+</vbox>

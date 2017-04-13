@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en-US">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <title>Ad Blocking Detector Implementations</title>
+        <style>
+        	#mainContainer {
+        		margin: 0px 10px;
+        		display: inline-block;
+        	}
+        	#mainTable {
+        		border: 3px solid black;
+        		border-collapse: collapse;
+        	}
+        	#mainTable th, #mainTable td{
+        		border: 1px solid black;
+        		padding: 5px;
+        	}
+        	#mainTable th {
+        		border-bottom-width: 2px;
+        	}
+        	tr:nth-child(even) {
+        		background-color: #f2f2f2
+        	}
+        	#mainTable th:nth-child(2), #mainTable th:nth-child(5), #mainTable th:nth-child(8), #mainTable th:nth-child(12), #mainTable td:nth-child(2), #mainTable td:nth-child(5), #mainTable td:nth-child(8), #mainTable td:nth-child(12) {
+        		border-left-width: 2px;
+        	}
+
+        </style>
+    </head>
+
+    <body>
+		<div id="mainContainer">
+			<h2>Ad Blocking Detector Implementations</h2>
+
+			<p>A list of websites that use ad blocker detectors, broken down by the checks they run. A "Bait Check" involves creating a container with a class name/id formulated to be detected by filter lists (the Bait Name) and then uses a series of functions to check whether the container has been blocked (the Bait Functions). A "Load Error" involves directly checking whether an external resource has been loaded; we note the resources loaded and the type of check used to detect the failure to load. A "Variable Check" involves loading a script designed to be blocked by filter lists. The script gives the variable a value, and that variable is checked in the main code to ensure the target script has been loaded.</p>
+
+			<table id="mainTable">
+				<tr><th>Site</th><th>Bait Check</th><th>Bait Name</th><th>Bait Functions</th><th>Load Error</th><th>Resource Loaded</th><th>Type of check</th><th>Variable Check</th><th>Script Name</th><th>Variable Name</th><th>Checked Against</th><th>Other</th><th>Description</th></tr>
+				<tr><td>8muses.com (article)</td><td>No</td><td></td><td></td><td>Yes</td><td>ads2.contentabc.com/ads?</td><td>error: (jQuery ajax)</td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>anghami.com</td><td>Yes</td><td>pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links</td><td>clientHeight, clientWidth, getPropertyValue("display"), getPropertyValue("visibility"), offsetHeight, offsetLeft, offsetTop, offsetWidth</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>benchmark.pl</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>Yes</td><td>Check for 'ctrl', 'fctrl' cookeis</td></tr>
+				<tr><td>bild.de</td><td>Yes</td><td>fullBanner; powerplace; subchannelBanner1_1; subchannelBanner1_2; ads; cbErotikContentbar15; contentbar; eyecatcher; footerbar; jetzt_aufnehmen; rectangle; servicelinks; tea-rectangle; txe; yield; adspecial</td><td>offsetHeight, offsetParent, offsetWidth</td><td>Yes</td><td><a href="http://cdn1.smartadserver.com/diff/251/divscripte/adplayer.css">cdn1.smartadserver.com/...</a></td><td>require</td><td>Yes</td><td>oneTag.js</td><td>asmi, asmi.sas, asmi.pageSet</td><td>check boolean</td><td>Yes</td><td>Cookie Check</td></tr>
+				<tr><td>bitcoin-gator.com</td><td>Yes</td><td>#tester</td><td>getElementById exists</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>businessinsider.com (article)</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>Yes</td><td>Check for __pac, __adblock cookies</td></tr>
+				<tr><td>buysellads.com</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>Yes</td><td>Include core css in a file called adblock.css, which is blocked</td></tr>
+				<tr><td>comunidadiptv.org</td><td>Yes</td><td>"#adsense.an-sponsored .an-advert-banner" and others</td><td>outerHeight [jQuery]</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>croydonguardian.co.uk</td><td>No</td><td></td><td></td><td>Yes</td><td>budgetedbauer.com, ad.doubleclick.net</td><td>load event handler</td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>cultofmac.com</td><td>Yes</td><td>pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links</td><td>clientHeight, clientWidth, getPropertyValue("display"), getPropertyValue("visibility"), offsetHeight, offsetLeft, offsetTop, offsetWidth</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>desktopsolution.org (article)</td><td>Yes</td><td>pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links</td><td>clientHeight, clientWidth, getPropertyValue("display"), getPropertyValue("visibility"), offsetHeight, offsetLeft, offsetTop, offsetWidth</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>elcorreo.com</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td>Yes</td><td>adframe.js, adfrm.js</td><td>Vocento.checkAdBlock</td><td>typeof == 'undefined'</td><td>No</td><td></td></tr>
+				<tr><td>forbes.com</td><td>Yes</td><td>random set</td><td>.height() [jQuery], .css("display") == "none"</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>game-state.com</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td>Yes</td><td>adblock.js</td><td>adblock</td><td>check boolean</td><td>No</td><td></td></tr>
+				<tr><td>gry.pl</td><td>Yes</td><td>#spilAdvert</td><td>getBoundingClientRect().left</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>hornmatters.com</td><td>Yes</td><td>.footer_ad</td><td>height() [jQuery] == 0</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>hubturkey.net</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td>Yes</td><td>ads-13-9.js</td><td>koddostu_com_adblock_yok</td><td> === undefined </td><td>No</td><td></td></tr>
+				<tr><td>itsupportguides.com</td><td>Yes</td><td>.adsbygoogle</td><td>height() [jQuery] == 0</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>kbb.com</td><td>Yes</td><td>#porkchopExpress</td><td>display === "none", visibility === "hidden"</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>kingofshrink.com</td><td>Yes</td><td>random set of classes</td><td>offsetParent == null; display == "none" using either getComputedStyle or getPropertyValue</td><td>Yes</td><td><a href="http://pagead2.googlesyndication.com/pagead/show_ads.js">pagead2.googlesyndication.com/...</a>, js.adscale.de/getads.js, get.mirando.de/mirando.js</td><td>on "loaded", set variable to null</td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>larioja.com</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td>Yes</td><td>adfrm.js</td><td>Vocento.checkAdBlock</td><td>typeof == 'undefined'</td><td>No</td><td></td></tr>
+				<tr><td>lasprovincias.es</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td>Yes</td><td>adfrm.js</td><td>Vocento.checkAdBlock</td><td>typeof == 'undefined'</td><td>No</td><td></td></tr>
+				<tr><td>maxcheaters.com</td><td>Yes</td><td>AdDiv, Zergnet, adbg_ad_0, admod2, ads728top, big_ads, largeAds, ad, ads, adsense</td><td>offsetParent == null, getStyle(getElementBy()).display == "none"</td><td>Yes</td><td>/adgallery1., /admeld_, /core/ad/ad, /dart_ads/ad, /dartcall., /predictad., /scripts/ad_, /toigoogleads., _files/ad., _480x60</td><td>onerror</td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>mid-day.com (article)</td><td>Yes</td><td>.AdSense</td><td>clientHeight</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>mx.dk</td><td>Yes</td><td>#leaderboard div, .adsense</td><td>display and getElementById exists</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>myanimelist.net</td><td>Yes</td><td>pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links</td><td>clientHeight, clientWidth, getPropertyValue("display"), getPropertyValue("visibility"), offsetHeight, offsetLeft, offsetTop, offsetWidth</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>narcity.com (article)</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td>Yes</td><td>ads.advert.js </td><td>ADBLOCK_NOT_PRESENT</td><td>typeof == 'undefined'</td><td>No</td><td></td></tr>
+				<tr><td>netaffiliation.com</td><td>Yes</td><td>ads_bottom</td><td>getElementById() == null</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>news.at</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>Yes</td><td>uabpdl check on the window object</td></tr>
+				<tr><td>opensnow.com</td><td>Yes</td><td>pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links</td><td>clientHeight, clientWidth, getPropertyValue("display"), getPropertyValue("visibility"), offsetHeight, offsetLeft, offsetTop, offsetWidth</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>pokewatchers.com</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td>Yes</td><td>adsbygoogle.js</td><td>a div</td><td>check for div's existence with getElementByID</td><td>No</td><td></td></tr>
+				<tr><td>pornhub.com</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td>Yes</td><td>holiday-promo.js (trafficjunky.net)</td><td>page_params.holiday_promo</td><td>typeof == 'undefined'</td><td>No</td><td></td></tr>
+				<tr><td>rewbux.com</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td>Yes</td><td>advertise.js</td><td>window.adblock</td><td>!('adblock' in window)</td><td>No</td><td></td></tr>
+				<tr><td>seokhazana.com</td><td>Yes</td><td>adlabel, advertbox3, bottomAd, mini-ad, rightAd, sky_advert, top_ad_game, ad, ads, adsense</td><td>offsetParent == null, getStyle(getElementBy()).display == "none"</td><td>Yes</td><td>.nz/ads/, /adiframetop., /ads/footer_, /bigads/ad, /googlead., /iframe_ads/ad, /includes/ad_, /kredit-ad., /pagepeelads., _adshare.</td><td>onerror</td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>siamfishing.com</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td>Yes</td><td>adsbygoogle.js?v1</td><td>is_noadblock </td><td>!= "yes"</td><td>No</td><td></td></tr>
+				<tr><td>sitenable.info</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td>Yes</td><td>google script</td><td>window.google_pub_config</td><td>check boolean</td><td>No</td><td></td></tr>
+				<tr><td>speedof.me</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td>Yes</td><td>google script</td><td>adsbygoogle["loaded"]</td><td>check boolean</td><td>No</td><td></td></tr>
+				<tr><td>spoiler.net</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>Yes</td><td>Background images are behind all ads; hiding ads reveals these images</td></tr>
+				<tr><td>standard.co.uk</td><td>Yes</td><td>.adsbox</td><td>offsetHeight === 0</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>sueddeutsche.de</td><td>Yes</td><td>"AdProduct", "GalleryViewerAdSuppress", "EzAdsSearchPro", "MBoxAdRight", "OuterAdvertisingContainer", "TimelineAd", "abAdPositionBoxB", "aboveCommentAdsWrapper", "ad-companion", "adengageadzone"</td><td>getPropertyValue("display"), getPropertyValue("height"), getPropertyValue("visibility"), getPropertyValue("width"), </td><td>No</td><td></td><td></td><td>Yes</td><td>ads.js</td><td>adblock.ads</td><td>"1337" !== adblock.ads</td><td>No</td><td></td></tr>
+				<tr><td>theargus.co.uk</td><td>No</td><td></td><td></td><td>Yes</td><td>budgetedbauer.com, ad.doubleclick.net</td><td>load event handler</td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>thewizardsmanse.com</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td>Yes</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>time.com</td><td>Yes</td><td>pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links</td><td>clientHeight, clientWidth, getPropertyValue("display"), getPropertyValue("visibility"), offsetHeight, offsetLeft, offsetTop, offsetWidth</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>titulky.com</td><td>Yes</td><td>pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links</td><td>clientHeight, clientWidth, getPropertyValue("display"), getPropertyValue("visibility"), offsetHeight, offsetLeft, offsetTop, offsetWidth</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>trucksim.org</td><td>Yes</td><td>.adsbygoogle, links with href including admuncher.com</td><td>is(":hidden") [jQuery]</td><td>No</td><td></td><td></td><td>Yes</td><td>google script</td><td>adsbygoogle</td><td>adsbygoogle && adsbygoogle<br>.hasOwnProperty("push")</td><td>No</td><td></td></tr>
+				<tr><td>ultraporn.biz</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td>Yes</td><td>site_ads.js</td><td>_site_ads_ns</td><td> === undefined</td><td>No</td><td></td></tr>
+				<tr><td>urlex.org</td><td>Yes</td><td>.adsbox</td><td>offsetHeight === 0</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>wasabisyrup.com</td><td>Yes</td><td>pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links</td><td>clientHeight, clientWidth, getPropertyValue("display"), getPropertyValue("visibility"), offsetHeight, offsetLeft, offsetTop, offsetWidth</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>youporn.com</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td>Yes</td><td>holiday-promo.js (trafficjunky.net)</td><td>page_params.holiday_promo</td><td>check boolean</td><td>No</td><td></td></tr>
+				<tr><td>yourlifeupdated.net</td><td>Yes</td><td>banner_ad</td><td>clientHeight, clientWidth, display, opacity, visibility</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+				<tr><td>zwergenstadt.com</td><td>Yes</td><td>adInteractive4', 'ad_728x90_container', 'adv-300', 'lower_ad', 'ns_ad2', 'rh_tower_ad', 'topadzone', 'ad', 'ads', 'adsense'</td><td>getElementByID or getElementsByTagName</td><td>No</td><td></td><td></td><td>No</td><td></td><td></td><td></td><td>No</td><td></td></tr>
+			</table>
+
+			<p>Number of Bait Checks: 28 </p>
+			<p>Number of Load Errors: 7 </p>
+			<p>Number of Variable Checks: 18 </p>
+			<p>Number of Others: 6 </p>
+
+			<p>Broadly Similar Sites: (2, 10, 11, 26, 30, 43, 44, 48); (9, 41); (12, 21, 22, 27, 32); (14, 36, 37); (16, 18); (17, 46); (23, 34); (39, 47) </p>
+			<p>Strictly Similar Sites(2, 10, 11, 26, 30, 43, 44, 48); (9, 41); (12, 21, 22); (39, 47) </p>
+
+			<p>Distinct Implementations (broad): 33 </p>
+			<p>Distinct Implementations (strict): 40 </p>
+		</div>
+	</body>
+</html>
