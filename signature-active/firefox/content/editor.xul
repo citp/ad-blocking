@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<window onload="init();"
+		title="Filters Editor"
+		xmlns:html="http://www.w3.org/1999/xhtml"
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+		
+<html:link rel="icon" href="chrome://activeadblock/skin/editor.png" style="display:none"/>		
+
+<groupbox id="modify" orient="horizontal">
+	<button label="Add" tooltiptext="Add Rule" oncommand="addRow();" flex="1"/>
+	<button label="Delete" tooltiptext="Delete Rule" oncommand="deleteRow();" flex="1"/>
+	<button label="Save" tooltiptext="Save Filters" oncommand="updateFilters();" flex="1"/>
+	<button label="Reload" tooltiptext="Reload Filters" oncommand="reloadFilters(true);" flex="1"/>
+	<button label="Close" tooltiptext="Close Editor" oncommand="closeEditor();" flex="1"/>
+</groupbox>
+
+<groupbox id="editbox" orient="horizontal">
+	<textbox id="editsearch" disabled="true" flex="1" oninput="updateCell(this, 0);"/>
+	<textbox id="editreplace" disabled="true" flex="1" oninput="updateCell(this, 1);"/>
+</groupbox>
+
+<tree id="elementList" flex="1" seltype="single" hidecolumnpicker="true" onselect="treeView.selectionChanged();">
+	<treecols>
+		<treecol id="search" label="Search" primary="true" flex="1"/>
+		<treecol id="replace" label="Replace" flex="1"/>
+	</treecols>
+	<treechildren/>
+</tree>
+
+<script src="chrome://activeadblock/content/editor.js"/>
+
+</window>

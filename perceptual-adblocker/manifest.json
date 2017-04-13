@@ -1,0 +1,64 @@
+{
+  "manifest_version": 2,
+
+  "name": "Perceptual Ad Blocker",
+  "description": "Identify Advertisements Using Perceptual Techniques",
+  "version": "0.1.0",
+  "browser_action": {
+    "default_icon": "icon24.png",
+    "default_popup": "popup.html",
+    "default_title": "Perceptual Ad Blocker"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "externalCode/jquery/jquery-1.12.4.min.js",
+        "perceptualLibrary/image_search.js",
+        "utils.js",
+        "content.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "match_about_blank": true
+    },
+    {
+      "matches": ["https://www.facebook.com/*"],
+      "js": [
+        "externalCode/jquery/jquery-1.12.4.min.js",
+        "perceptualLibrary/container_finder.js",
+        "perceptualLibrary/link_clicker.js",
+        "perceptualLibrary/check_text_and_link.js",
+        "locale_info.js",
+        "utils.js",
+        "ad_highlighter.js"]
+    }
+  ],
+  "background": {
+    "scripts": [
+        "externalCode/grafi.js",
+        "externalCode/tesseract.js",
+        "perceptualLibrary/adchoices_hashes.js",
+        "perceptualLibrary/hash_encoding.js",
+        "perceptualLibrary/perceptual_background.js"
+      ]
+  },
+  "permissions": [
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "*://*/*"
+  ],
+  "content_security_policy": "object-src 'self'; img-src * data:; script-src 'self' 'unsafe-eval' chrome-extension://gealglfelmndodeocfbfedggekgiofhe blob: filesystem: chrome-extension-resource:",
+  "web_accessible_resources": [
+    "actual_icons/*.png",
+    "externalCode/tesseract_index.js",
+    "externalCode/tesseract_worker.js",
+    "externalCode/eng.traineddata.gz"
+  ]
+}

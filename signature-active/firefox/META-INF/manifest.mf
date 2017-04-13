@@ -1,0 +1,67 @@
+Manifest-Version: 1.0
+
+Name: install.rdf
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: BuRP30EigDIrqnmEe+Deyw==
+SHA1-Digest: lsuRK71aVV9EIV2q8dlb1A6WOXs=
+
+Name: chrome.manifest
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: wzpx4QHAMjJljauXKzukEg==
+SHA1-Digest: YTFSJwKoU2s1BKk2YNmdTE+ahvs=
+
+Name: icon.png
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: EcUYi6QZwznHTfdS5lXRJA==
+SHA1-Digest: 8mrmbh4EKpPRa7H5CKCeinf+oPE=
+
+Name: bootstrap.js
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: 3cjLpo/HMc6LmrJhjjwJyA==
+SHA1-Digest: BNx3spJ9gMmLjkmwG1H541nk/rU=
+
+Name: options.xul
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: GNLzQf4hFvmlHFFhxUsUUw==
+SHA1-Digest: PlnDK7UT0WSe4M0hwmbGEmakQPg=
+
+Name: content/editor.js
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: +UhESyF8cE4/1oJltrjvfw==
+SHA1-Digest: MktwZNjmUFhoG2B0A7f2lXk0P4E=
+
+Name: content/editor.xul
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: NIhwfxpRqMBm52WtY9m/Fg==
+SHA1-Digest: wwfOpUtYx9cnOQLEtvlSOXmt39k=
+
+Name: content/prefloader.js
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: sJnWvHSDJGJhOkpFpC/QNw==
+SHA1-Digest: do3kP0MOGOwUzI7kT3+SgAYrSck=
+
+Name: defaults/preferences/activeadblock.js
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: SgHZdNRC5Lg3mdQK2Pn/tw==
+SHA1-Digest: LmIKA89ajr06lgGfDxZiQjzMnfY=
+
+Name: skin/editor.png
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: EcUYi6QZwznHTfdS5lXRJA==
+SHA1-Digest: 8mrmbh4EKpPRa7H5CKCeinf+oPE=
+
+Name: skin/icoff.png
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: Nyyolu5Fm1xpnJ55WC/2LA==
+SHA1-Digest: CwK42kDME3cnTpLLO/0JuibNB0s=
+
+Name: skin/icon.png
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: +obyLxVMKrespYFTn7lWUw==
+SHA1-Digest: boTH6dzNZA5X27QeQklEcyDH8jI=
+
+Name: skin/activeadblock.css
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: quiumT1hfT/s/1uNmIRBRw==
+SHA1-Digest: u6S3bmf64lDjYjtLabNOglvDupQ=
+
