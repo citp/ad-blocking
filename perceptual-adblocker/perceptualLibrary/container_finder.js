@@ -108,7 +108,7 @@ function findContainers(args) {
     if (args["cssMatches"]) {
       for (var i = 0; i < args["cssMatches"].length; i++) {
         var match = args["cssMatches"][i];
-        if ($(this).css(match["prop"]) != match["val"]) {
+        if (($(this).css(match["prop"]) != match["val"]) && (window.getComputedStyle($(this).get(0),':before').getPropertyValue(match["prop"]).replace(/\"/g, "") != match["val"]) && (window.getComputedStyle($(this).get(0),':after').getPropertyValue(match["prop"]).replace(/\"/g, "") != match["val"])) {
           properCSSMatches = false;
           break;
         }
